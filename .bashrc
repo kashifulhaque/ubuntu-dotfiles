@@ -181,9 +181,9 @@ mrenv() {
 # Just pass the name of environment to activate. Example: ac ML
 ac() {
   if [ -z "$1" ]; then
-    micromamba env list
-  else
     micromamba activate "$1"
+  else
+    micromamba env list
   fi
 }
 
