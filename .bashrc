@@ -181,9 +181,9 @@ mrenv() {
 # Just pass the name of environment to activate. Example: ac ML
 ac() {
   if [ -z "$1" ]; then
-    micromamba activate "$1"
-  else
     micromamba env list
+  else
+    micromamba activate "$1"
   fi
 }
 
@@ -194,6 +194,7 @@ deac() {
 # Alias for uv pip (https://github.com/astral-sh/uv)
 alias venv='uv venv && source .venv/bin/activate'
 alias denv='deactivate'
+alias pip='uv pip'
 alias freeze='uv pip freeze | uv pip compile - -o requirements.txt'
 alias pipr='uv pip install -r requirements.txt'
 alias pip-setup='uv pip compile setup.py -o requirements.txt'
@@ -219,12 +220,6 @@ export PATH=$PATH:/usr/local/go/bin
 
 # Java Maven
 export PATH=$PATH:/home/ifkash/.maven/bin
-
-# Check if I am in a tmux session of not
-if [ -z "$TMUX" ]; then
-  # If I am not in a tmux session, start it
-  tmux -u
-fi
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
