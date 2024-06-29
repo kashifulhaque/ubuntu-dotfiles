@@ -131,7 +131,7 @@ unset __mamba_setup
 . "$HOME/.cargo/env"
 
 # Fancy shell prompt
-eval "$(oh-my-posh init bash --config ~/.config/omp/themes/the-unnamed.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.config/omp/themes/space.omp.json)"
 
 alias dl='http --download'
 
