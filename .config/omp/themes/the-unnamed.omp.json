@@ -5,6 +5,18 @@
       "alignment": "left",
       "segments": [
         {
+          "background": "transparent",
+          "foreground": "#1efc73",
+          "style": "powerline",
+          "properties": {
+            "display_mode": "environment",
+            "fetch_virtual_env": true,
+            "home_enabled": true
+          },
+          "type": "python",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+        },
+        {
           "foreground": "#15C2CB",
           "properties": {
             "style": "folder"
