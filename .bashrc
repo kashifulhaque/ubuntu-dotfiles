@@ -163,18 +163,18 @@ alias mamba='micromamba'
 # Just pass the name of environment to make. Example: menv ML
 menv() {
   if [ -z "$1" ]; then
-    micromamba create -n "$1" python=3.10 -c conda-forge -y
+    echo "Please provide a name for the environment"
   else
-    echo "Provide the environment name"
+    micromamba create -n "$1" python=3.10 -c conda-forge -y
   fi;
 }
 
 # Just pass the name of environment to delete. Example: mrenv ML
 mrenv() {
   if [ -z "$1" ]; then
-    micromamba deactivate && micromamba env remove -n "$1" -y
-  else
     micromamba env list
+  else
+    micromamba deactivate && micromamba env remove -n "$1" -y
   fi
 }
 
