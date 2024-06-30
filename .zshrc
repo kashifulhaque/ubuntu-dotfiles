@@ -215,6 +215,12 @@ export PATH=$PATH:/usr/local/go/bin
 # Java Maven
 export PATH=$PATH:/home/ifkash/.maven/bin
 
+[[ -r ~/zsh-snap/znap/znap.zsh ]] ||
+  git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git ~/ubuntu-dotfiles/zsh-snap/znap
+
+# Start zsh-snap
+source ~/zsh-snap/znap/znap.zsh
+
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
