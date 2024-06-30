@@ -38,7 +38,7 @@
           "type": "git"
         },
         {
-          "foreground": "#906cff",
+          "foreground": "#0add08",
           "style": "powerline",
           "template": "[\ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}] ",
           "type": "python"
