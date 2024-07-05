@@ -134,8 +134,12 @@ alias ll='eza -al --group-directories-first --icons'
 alias logout='sudo pkill -u $USER'
 alias mkdir='mkdir -p'
 
-# Set nvim as default editor
-export EDITOR="nvim"
+# neovim stuff
+export EDITOR='nvim'
+alias nvsearch='nvim $(fzf -m --preview="batcat --color=always {}")'
+
+# cat alternative
+alias bat='batcat --color=always'
 
 # >>> mamba initialize >>>
 # !! Contents within this block are managed by 'mamba init' !!
@@ -220,6 +224,9 @@ source ~/zsh-snap/znap/znap.zsh
 
 # Trigger zsh autocomplete
 source ~/zsh-snap/marlonrichert/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+
+# Setup fzf keybinds and fuzzy completions
+source <(fzf --zsh)
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

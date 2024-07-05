@@ -106,8 +106,8 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 # A file for all the API keys
-if [ -f ~/.bash_api_keys ]; then
-  . ~/.bash_api_keys
+if [ -f ~/.api_keys ]; then
+  . ~/.api_keys
 fi
 
 # enable programmable completion features (you don't need to enable
