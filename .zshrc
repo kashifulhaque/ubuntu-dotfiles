@@ -228,9 +228,12 @@ source ~/zsh-snap/marlonrichert/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # Setup fzf keybinds and fuzzy completions
 source <(fzf --zsh)
 
-# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# Remove annoying background colour from directory names
+export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
 # bun completions
 [ -s "/home/ifkash/.bun/_bun" ] && source "/home/ifkash/.bun/_bun"
+
+# THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
