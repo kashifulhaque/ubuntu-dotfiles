@@ -207,6 +207,9 @@ alias down='docker compose down -v'
 # Ubuntu alias
 alias updrade='sudo nala update && sudo nala upgrade -y'
 
+# Lightning AI Studio SSH
+alias ssh-studio='ssh s_01hx7ch4ywceaeqv83ejgxbkc4@ssh.lightning.ai'
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
@@ -215,6 +218,7 @@ export PATH="/usr/lib/ccache:$PATH"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/bin
 
 # Java Maven
 export PATH=$PATH:/home/ifkash/.maven/bin
