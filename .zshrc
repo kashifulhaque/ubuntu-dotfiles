@@ -205,7 +205,11 @@ format_python_files() {
   fi
 
   local current_dir=$(pwd)
-  find "$current_dir" -type f -name "*.py" -print0 | while IFS= read -r -d '' file; do
+  find "$current_dir" -type f -name "*.py" \
+    -not -path "*/\.git/*" \
+    -not -path "*/\.venv/*" \
+    -not -path "*/__pycache__/*" \
+    -print0 | while IFS= read -r -d '' file; do
     ruff format "$file"
   done
   echo "Python files formatting complete"
