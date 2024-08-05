@@ -197,6 +197,20 @@ alias freeze='uv pip freeze | uv pip compile - -o requirements.txt'
 alias pipr='uv pip install -r requirements.txt'
 alias pip-setup='uv pip compile setup.py -o requirements.txt'
 
+# Python stuff
+format_python_files() {
+  if ! command -v ruff &> /dev/null; then
+    echo "[ERROR] Command `ruff` NOT found. Please install it from https://github.com/astral-sh/ruff?tab=readme-ov-file#installation"
+    return 1
+  fi
+
+  local current_dir=$(pwd)
+  find "$current_dir" -type f -name "*.py" -print0 | while IFS= read -r -d '' file; do
+    ruff format "$file"
+  done
+  echo "Python files formatting complete"
+}
+
 # Alias for tmux with unicode support
 alias tmux='tmux -u'
 
@@ -237,6 +251,9 @@ export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
 # bun completions
 [ -s "/home/ifkash/.bun/_bun" ] && source "/home/ifkash/.bun/_bun"
+
+# Dont generate pycache
+export PYTHONDONTWRITEBYTECODE=1
 
 # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
